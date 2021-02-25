@@ -1,0 +1,50 @@
+<h1>lA WEA FOME WEON QLIAO XD</h1>
+
+<form [formGroup]="optionsForm" (ngSubmit)="submitInfoDevice()">
+    <label >
+        Nombre:
+        <input type="text" formControlName="name">
+        <div *ngIf="optionsForm.get('name')?.invalid && isValidFormOptions != null && !isValidFormOptions" [ngClass] = "'error'"> 
+            Nombre requerido 
+        </div>
+    </label>
+
+    <label>
+        Numeros:
+        <input type="radio" value="Si" formControlName="numbers">Si
+        <input type="radio" value="No" formControlName="numbers">No
+        <div *ngIf="optionsForm.get('numbers')?.invalid && isValidFormOptions != null && !isValidFormOptions" [ngClass] = "'error'"> 
+            Campo requerido 
+        </div>
+    </label>
+
+    <select formControlName="type">
+        <option value="" disabled>Selecciona el tipo de dispositivo</option>
+        <option *ngFor="let dev of devices" (change)="changeDevice($event)">{{ dev }}</option>
+    </select>
+    <div *ngIf="optionsForm.get('type')?.invalid && isValidFormOptions != null && !isValidFormOptions" [ngClass] = "'error'"> 
+        Campo requerido 
+    </div>
+
+    <button>Subele</button>
+</form>
+
+<div *ngFor="let feed of feedbackMessages">
+    <p>{{ feed }}</p>
+</div>
+
+<!-- Tal vez lo ponga en un componente -->
+<div *ngIf="ready" [ngClass] = "'error'"> 
+    <form [formGroup]="deviceForm">
+
+        <select formControlName="devices">
+            <option value="" disabled>Selecciona el dispositivo</option>
+            <option *ngFor="let dev of dataUser.Devices.Tv" (change)="changeSelectedDevice($event)">{{ dev.Name }}</option>
+        </select>
+
+        <button>jja</button>
+    </form>
+
+    <button (click)="Onoff()">Encender/Apagar</button>
+
+</div>
