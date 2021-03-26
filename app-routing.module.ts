@@ -5,6 +5,7 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { productoComponent} from "./producto/producto.Component";
 import { index2Component } from './index2/index2.component';
+import { portadacomponent } from './portada/portada.component';
 
 const routes: Routes = [
   
