@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: large;   
+}
+
+nav{
+    position: fixed;
+    top: 20px;
+    left: 20px; 
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    animation: moverIzquierda 1s ease-in;
+    border: 2px solid rgb(27, 123, 212);
+
+}
+
+header{
+    background: #005AA7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: auto;
+    padding: 48px;
+    width: 100%;
+}
+
+.container{
+    width: 95%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;   
+    margin: auto;
+}
+
+img {
+    display: block;
+    height: 200px;
+    object-fit: cover;
+    width: auto;
+    animation: moverArriba 1s ease-in;
+}
+
+.textos{
+    width: 50%;
+    color: black;
+}
+
+.textos h1{
+    font-size: 80px;   
+    animation: moverDerecha 1s ease-in; 
+}
+
+.textos h2{
+    font-size: 30px;   
+    color: gray; 
+    animation: moverIzquierda 1s ease-in;
+}
+
+.textos a{
+    display: inline-block;
+    color:black;
+    font-weight: 300;
+    text-decoration: none;
+    margin-top: 30px;
+    border: 2px solid rgb(27, 123, 212);
+    width: 150px;
+    border-radius: 3px;
+    text-align: center;
+    padding: 10px, 0;
+    animation: moverArriba 1s ease-in;
+}
+
+.wave{
+    height: 100px;
+    width: 100%;
+    background: #005AA7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@keyframes moverIzquierda{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moverDerecha{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moverArriba{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
