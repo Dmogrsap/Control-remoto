@@ -12,7 +12,8 @@ const routes: Routes = [
     { path: "index2", component: index2Component, pathMatch: "full" },
     { path: "login", component: LoginComponent, pathMatch: "full" },
     { path: "register", component: RegisterComponent, pathMatch: "full" },
-    { path: "producto", component: productoComponent, pathMatch: "full" }
+    { path: "producto", component: productoComponent, pathMatch: "full" },
+    { path: "portada", component: portadacomponent, pathMatch: "full" }
 ];
 
 @NgModule({
