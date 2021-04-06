@@ -51,3 +51,34 @@ export class MediaPlayer extends Device{
         this.Eject = 0;
     }
 }
+
+export class PowerOnDate extends Tv {
+    Channel: number = 0;
+    Date: string = "";
+
+    constructor(data: Tv, date: string, channel: number) {
+        super();
+        this.Protocol = data.Protocol;
+        this.Addres = data.Addres;
+        this.OnOff = data.OnOff;
+
+        if (channel != 0) {
+            this.Channel = channel;
+            this.Numbers = data.Numbers;
+        }
+        
+        this.Date = date;
+    }
+}
+
+export class Fav extends Tv {
+    Channel: number;
+
+    constructor(data: Tv, chann: number) {
+        super();
+        this.Numbers = data.Numbers;
+        this.Addres = data.Addres;
+        this.Protocol = data.Protocol;
+        this.Channel = chann;
+    }
+}

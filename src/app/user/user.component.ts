@@ -8,6 +8,7 @@ import { UserService } from './user.service'
 @Component({
     selector: "app-login",
     templateUrl: './user.component.html',
+    styleUrls: ['./user.component.css'],
     providers: [UserService]
 })
 

@@ -1,6 +1,6 @@
 export interface DeviceInfo {
     Capture: number;
     Protocol: number;
-    Addres: number;
+    Addr: number;
     Command: number;
 }

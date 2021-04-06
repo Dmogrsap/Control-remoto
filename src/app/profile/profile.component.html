@@ -1,6 +1,4 @@
-<h1>lA WEA FOME WEON QLIAO XD</h1>
-
-<form [formGroup]="optionsForm" (ngSubmit)="submitInfoDevice()">
+<!-- <form [formGroup]="optionsForm" (ngSubmit)="submitInfoDevice()">
     <label >
         Nombre:
         <input type="text" formControlName="name">
@@ -33,7 +31,7 @@
     <p>{{ feed }}</p>
 </div>
 
-<!-- Tal vez lo ponga en un componente -->
+ Tal vez lo ponga en un componente
 <div *ngIf="ready" [ngClass] = "'error'"> 
     <form [formGroup]="deviceForm">
 
@@ -47,4 +45,55 @@
 
     <button (click)="Onoff()">Encender/Apagar</button>
 
+</div>
+
+<div *ngIf="ready" [ngClass] = "'error'"> 
+    <form [formGroup]="dateForm">
+        <input type="datetime-local" formControlName="dateOn">
+        <input type="number" formControlName="channel">
+    </form>
+
+    <button (click)="SchedulerOn()">Programar</button>
+
+</div>
+
+<h1>Favoritos</h1>
+
+<div *ngIf="ready" [ngClass] = "'error'">
+
+    <form [formGroup]="favForm" (ngSubmit)="ChangeFav()">
+        <select formControlName="channel">
+            <option value="" disabled>Selecciona canal</option>
+            <option *ngFor="let fav of dataUser.Favorites" (change)="changeFavorite($event)">{{ fav }}</option>
+        </select>
+
+        <label>
+            Nuevo Canal:
+            <input type="number" formControlName="newchannel">
+        </label>
+    
+        <button>Cambiar</button>
+    </form>
+
+    <button (click)="AddFav()">Agregar Canal</button>
+
+</div>
+-->
+<header class="cabecera">
+    <a (click)="changeNameDev()" [routerLink]="['/profile', {outlets: {'secondRouter': ['menu']}}]">
+        <img src="../../assets/svg/Home1.svg" alt="">
+    </a>
+    <!--<img src="../../assets/svg/Menu.svg" alt="Algo anda mal :(" srcset=""> -->
+
+    <div class="selec">
+        <p>{{ nameDev }}</p>
+        <img src="../../assets/svg/Polygon 1.svg" alt="" srcset=""
+        style="margin-left: 0.5rem;">
+    </div>
+
+</header>
+
+<!-- <app-menu [userdevices]="dataUser"></app-menu> -->
+<div [@triggerName]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet" name='secondRouter'></router-outlet>
 </div>

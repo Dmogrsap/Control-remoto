@@ -44,11 +44,45 @@ export class ProfileService {
     }
 
     async newDevice(dev: any, type: string) {
-        return this.http.post<any>('/inte/user/' + localStorage.getItem("user_remo") + "/newDevice/" + type, 
+        return this.http.post<any>('/inte/user/' + 
+        localStorage.getItem("user_remo") +
+        "/newDevice/" + type, 
         dev,
         httpOptions)
         .pipe(
             catchError(this.handleError('get Data'))
+        );
+    }
+
+    ScheduleCommand(info: any) {
+        return this.http.post<any>('/inte/progOn', info, httpOptions)
+        .pipe(
+            catchError(this.handleError('Prog On'))
+        );
+    }
+
+    FavCommand(fav: any) {
+        return this.http.post<any>('/inte/favorite', fav, httpOptions)
+        .pipe(
+            catchError(this.handleError('Fav'))
+        );
+    }
+
+    NewFavCommand(fav: number) {
+        return this.http.put<any>('inte/user/'+
+        localStorage.getItem("user_remo") +
+        '/newFavorite/' + fav, httpOptions)
+        .pipe(
+            catchError(this.handleError('Fav'))
+        );
+    }
+
+    RemoveFav(fav: number[]) {
+        return this.http.post<any>('inte/user/'+
+        localStorage.getItem("user_remo") +
+        '/removeFavorite/', fav, httpOptions)
+        .pipe(
+            catchError(this.handleError('Fav'))
         );
     }
 }

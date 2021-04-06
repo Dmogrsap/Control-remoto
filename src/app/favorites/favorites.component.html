@@ -1,0 +1,31 @@
+<p class="title">
+    Favoritos
+</p>
+
+<form class="fav-form" [formGroup]="favForm" (ngSubmit)="addFav()">
+    
+    <mat-form-field class="fav-input">
+      <mat-label>Favoritos</mat-label>
+      <input type="number" min="0" formControlName="newchannel"
+      matInput #message placeholder="Ingresa un canal">
+      <mat-hint align="start"><strong>Ingresa solo numeros</strong></mat-hint>
+    </mat-form-field>
+
+    <div class="channels">
+
+        <p class="indi">Canales:</p>
+        <cdk-virtual-scroll-viewport itemSize="50" class="favor">
+            <div *ngFor="let fav of data.fav; let i = index" [attr.data-index]="i">
+
+                <div class="num-container">
+                    <p style="margin: 0;">{{ fav }}</p>
+                    <img (click)="delFav(i)" class="del" src="../../assets/svg/Delete.svg" alt="" srcset="">    
+                </div>
+
+            </div>
+        </cdk-virtual-scroll-viewport>
+
+    </div>
+
+    <button mat-button>Agregar</button>
+</form>

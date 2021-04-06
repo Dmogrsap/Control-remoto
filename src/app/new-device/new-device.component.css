@@ -1,0 +1,38 @@
+.selec-font {
+    width: fit-content;
+    padding: 0.2rem 0rem;
+}
+
+.add-menu {
+    margin: 2rem 5rem;
+    padding: 1.5rem;
+
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.newdev-title {
+    font-family: "FreeSans";
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 24pt;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.msg {
+    font-size: 8pt;
+    color: rgba(167, 167, 167, 0.8);
+}
+
+.process {
+    text-align: center;
+}
+
+.feed {
+    font-size: 24pt;
+}

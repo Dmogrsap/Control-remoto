@@ -1,0 +1,46 @@
+<div class="add-menu">
+    <div *ngIf="!capture">
+        <p class="newdev-title">Nuevo Dispositivo</p>
+
+        <form class="add-form" [formGroup]="devForm" (ngSubmit)="captureDevice()">
+            
+            <mat-form-field>
+                <mat-label>Nombre del Dispositivo</mat-label>
+                <input type="text" formControlName="devname"
+                matInput #message placeholder="Ingresa un nombre">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Tipo de Dispositivo</mat-label>
+                <mat-select formControlName="dev">
+                <mat-option 
+                *ngFor="let dev of devs" 
+                [value]="dev">
+                    {{ dev }}
+                </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-checkbox 
+            class="selec-font msg"
+            formControlName="withNumbers">
+                Capturar Numeros
+            </mat-checkbox>
+
+            <button class="selec-font" mat-button>Iniciar Captura</button>
+        </form>
+    </div>
+
+    <div class="process" *ngIf="capture">
+        <p class="feed"> {{ feedback }}</p>
+
+        <p *ngIf="!success">
+            Esperando Respuesta ...
+        </p>
+
+        <p *ngIf="success">
+            <img src="../../assets/svg/check.svg" alt="">
+        </p>
+    </div>
+
+</div>

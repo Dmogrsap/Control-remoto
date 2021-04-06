@@ -1,0 +1,63 @@
+<div class="devices-container">
+
+    <div class="scrollable">
+
+        <div class="tv-container">
+            <input type="checkbox" id="check1">
+
+            <div class="head">
+                <label for="check1" class="title-devs">Tv</label>
+                <p class="num-devs"> 
+                    Total: {{ this.dataUser.Devices.Tv.length }}
+                </p>
+            </div>
+            
+            <div class="line"></div>
+
+            <div class="user-tvs">
+
+                <div *ngFor="let tv of dataUser.Devices.Tv">
+                    <a (click)="changeName(tv)" [routerLink]="['/profile', {outlets: {'secondRouter': ['tv']}}]">
+                        <div class="tv-info button-style fill"
+                        matRipple
+                        [matRippleCentered]="false"
+                        [matRippleRadius]="0"
+                        [matRippleColor]="'rgba(255, 255, 255, 0.3)'">
+
+                            <img src="../../assets/svg/Tv.svg" alt="Nel" srcset=""
+                            style="margin-right: 0.5rem;">
+
+                            <div class="details">
+                                <p class="selec">{{ tv.Name }}</p>
+
+                                <p>Marca</p>
+
+                                <p *ngIf="tv.Numbers.length !== 0; else NoNumbers">
+                                    Numeros
+                                </p>
+
+                                <ng-template #NoNumbers>Sin numeros</ng-template>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <div class="title-devs">Reproductores</div>
+            <div class="line"></div>
+        </div>
+
+    </div>
+    
+</div>
+
+<div class="add-dev" [routerLink]="['/profile', {outlets: {'secondRouter': ['add']}}]">
+    <div class="new-device button-style">
+        <img class="tam-plus" src="../../assets/svg/Plus.svg" alt="">
+    </div>
+
+    <p>Nuevo Dispositivo</p>
+</div>

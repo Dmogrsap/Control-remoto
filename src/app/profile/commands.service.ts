@@ -15,8 +15,8 @@ export class Commands {
         return this.profileService.newCommand(act)
     }
 
-    async captureTv() {
-        const deviceAction: DeviceInfo = {Capture: 1, Addres: 0, Protocol: 0, Command: 0};
+    async captureTv(num: boolean) {
+        const deviceAction: DeviceInfo = {Capture: 1, Addr: 0, Protocol: 0, Command: 0};
         let device = new Tv();
 
         this.command = await this.newComm(deviceAction);
@@ -35,6 +35,15 @@ export class Commands {
 
         this.command = await this.newComm(deviceAction);
         device["ChaDown"] = this.command.info["command"];
+
+        if(num) {
+
+            for(let i = 0; i < 10; i++) {
+              this.command = await this.newComm(deviceAction);
+              device["Numbers"][i] = this.command.info["command"];
+            }
+
+        }
 
         return device;
     }

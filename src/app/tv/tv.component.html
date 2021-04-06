@@ -1,0 +1,105 @@
+<div class="back">
+    <div class="buttons-container">
+        <div class="head-btn">
+            <a (click)="Onoff()">
+                <div class="circle-button onoff button-style mat-elevation-z4"
+                matRipple
+                [matRippleCentered]="false"
+                [matRippleRadius]="0"
+                [matRippleColor]="'rgba(255, 0, 0, 0.3)'">
+                    <!-- <span class="icon on-btn"></span> -->
+                    <img src="../../assets/svg/symOn.svg" alt="" srcset="">
+                </div>
+            </a>
+        </div>
+    
+        <div class="large-btn">
+    
+            <div class="circle-largebutton button-style vol"
+            matRipple
+            [matRippleCentered]="false"
+            [matRippleRadius]="0"
+            [matRippleColor]="'rgba(255, 255, 255, 0.5)'">
+                <a (click)="Volup()">
+                    <div class="sign">
+                        <img src="../../assets/svg/Plus1.svg" alt="" srcset="">
+                    </div>
+                </a>
+    
+                <div class="volumen">
+                    <img src="../../assets/svg/Vol1.svg" alt="" srcset="">
+                </div>
+    
+                <a (click)="Voldown()">
+                    <div class="sign">
+                        <img src="../../assets/svg/Minus1.svg" alt="" srcset="">
+                    </div>
+                </a>
+            </div>
+    
+            <div class="circle-largebutton button-style cha"
+            matRipple
+            [matRippleCentered]="false"
+            [matRippleRadius]="0"
+            [matRippleColor]="'rgba(255, 255, 255, 0.5)'">
+                <a (click)="Chaup()">
+                    <div class="sign">
+                        <img src="../../assets/svg/Plus1.svg" alt="" srcset="">
+                    </div>
+                </a>
+    
+                <div class="channel">
+                    <img src="../../assets/svg/CH1.svg" alt="" srcset="">
+                </div>
+    
+                <a (click)="Chadown()">
+                    <div class="sign">
+                        <img src="../../assets/svg/Minus1.svg" alt="" srcset="">
+                    </div>
+                </a>
+            </div>
+    
+        </div>
+    
+        <div *ngIf="selectedTv.Numbers.length !== 0">
+            <div class="bottom-btn" (click)="showFav()">
+                <div class="circle-button button-style"
+                matRipple
+                [matRippleCentered]="false"
+                [matRippleRadius]="0"
+                [matRippleColor]="'rgba(250, 240, 10, 0.4)'">
+                    <img src="../../assets/svg/Fav1.svg" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    
+    <div class="flotant-btn">
+    
+        <div class="float-btn" (click)="scheduleDate()"
+        matRipple
+        [matRippleCentered]="false"
+        [matRippleRadius]="0"
+        [matRippleColor]="'rgba(255, 255, 255, 0.5)'"> <!-- Propiedad: button-style -->
+            <div class="box-btn">
+                <img src="../../assets/svg/Calendar1.svg" alt="" srcset="">
+                <p class="float-text">Fecha de encendido</p>    
+            </div>
+        </div>
+    
+        <div *ngIf="selectedTv.Numbers.length !== 0">
+            <div class="float-btn star" (click)="fav()"
+            matRipple
+            [matRippleCentered]="false"
+            [matRippleRadius]="0"
+            [matRippleColor]="'rgba(250, 240, 10, 0.4)'"> <!-- Propiedad: button-style -->
+                <div class="box-btn">
+                    <img src="../../assets/svg/Fav1.svg" alt="" srcset="">
+                    <p class="float-text">Favoritos</p>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

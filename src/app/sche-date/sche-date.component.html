@@ -1,0 +1,89 @@
+<p class="title">
+    Programar
+</p>
+
+<form class="sche-form" [formGroup]="dateForm" (ngSubmit)="SchedulerOn()">
+
+    <mat-form-field class="input">
+        <mat-label>Escoge una Fecha de Encendido</mat-label>
+        <input formControlName="dateOn" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>
+                <img class="icon-date" src="../../assets/svg/Calendar.svg" alt="">
+            </mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="msg" 
+    *ngIf="dateForm.get('dateOn')?.invalid && isValidFormOptions != null && !isValidFormOptions" [ngClass] = "'error'"> 
+        Fecha requerida
+    </div>
+
+    <div class="time">
+        <mat-form-field class="date-size">
+            <mat-label>Horas</mat-label>
+            <mat-select formControlName="hours">
+              <mat-option 
+              *ngFor="let hour of hours" 
+              [value]="hour">
+                {{ hour }}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="date-size">
+            <mat-label>Minutos</mat-label>
+            <mat-select formControlName="minutes">
+              <mat-option
+              *ngFor="let min of minutes" 
+              [value]="min">
+                {{ min }}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="ampm-container">
+            <mat-radio-group class="ampm" formControlName="am_pm">
+                <mat-radio-button class="rad" value="a.m.">a.m.</mat-radio-button>
+                <mat-radio-button class="rad" value="p.m.">p.m.</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        
+    </div>
+    
+    <div class="chan-input">
+
+        <div *ngIf="!channelOn">
+            <mat-form-field class="input">
+                <mat-label>Canal</mat-label>
+                <input type="number" min="0" formControlName="channel"
+                matInput #message placeholder="Canal de encendido">
+                <mat-hint align="start"><strong>Ingresa solo numeros</strong></mat-hint>
+            </mat-form-field>
+        </div>
+
+        <mat-checkbox 
+        *ngIf="data.num != 0" 
+        class="msg check" 
+        (click)="changeState()"
+        formControlName="withChannel">
+            Canal al encender
+        </mat-checkbox>
+
+    </div>
+
+    <div *ngIf="!validDate" class="msg-err">
+        Fecha Invalida, Introduce una Fecha Valida
+    </div>
+
+    <div *ngIf="validDate && success" class="msg-succ">
+        Fecha Programada
+    </div>
+
+    <div class="sub">
+        <button mat-button>Programar</button>
+    </div>
+
+</form>    
+

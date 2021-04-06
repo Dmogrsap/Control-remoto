@@ -1,0 +1,102 @@
+@font-face {
+    font-family: "FreeSansBold";
+    src: local("FREESANSBOLD"), url(../../assets/fonts/FREESANSBOLD.TTF) format("truetype");
+}
+
+::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(104, 104, 104, 0.5); 
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 0, 0); 
+}
+
+.sche-form {
+    min-width: 20%;
+    max-height: 20%;
+    width: 100%;
+}
+
+.title {
+    width: fit-content;
+    font-family: "FreeSansBold";
+    font-size: 36pt;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 1.2rem;
+}
+
+.icon-date {
+    width: 12px;
+    height: 12px;
+}
+
+.input {
+    width: 80%;
+    font-family: "FreeSans";
+}
+
+.sub {
+    margin-top: 1rem;
+    text-align: right;
+    font-family: "FreeSans";
+}
+
+.msg {
+    font-size: 8pt;
+    margin: 0.2rem;
+    margin-bottom: 1rem;
+    color: rgba(167, 167, 167, 0.8);
+}
+
+.chan-input {
+    display: inline-flex;
+}
+
+.check {
+    margin-top: 3rem;
+}
+
+.msg-err {
+    font-size: 12pt;
+    margin: 0.2rem;
+    color: rgba(220, 0, 0, 0.8);
+}
+
+.msg-succ {
+    font-size: 12pt;
+    margin: 0.2rem;
+    color: rgba(38, 175, 0, 0.8);
+}
+
+.time {
+    width: 100%;
+    display: flex;
+}
+
+.date-size {
+    width: 40%;
+}
+
+.ampm {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.rad {
+    margin-bottom: 0.3rem;
+}
+
+.ampm-container {
+    margin-left: 1rem;
+}
