@@ -91,6 +91,7 @@ export class ScheDateComponent implements OnInit {
     }
 
     this.validDate = true;
+    console.log(new PowerOnDate(this.data.tv, datestr, channel));
     this.profile.ScheduleCommand(new PowerOnDate(this.data.tv, datestr, channel)).subscribe();
     this.success = true;
   }
